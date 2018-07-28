@@ -1,0 +1,591 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F8BEA09A-0FC8-47B9-8D56-17B8B523F24C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>视野分销业务管理平台V3._0.My.MyApplication</StartupObject>
+    <RootNamespace>视野分销业务管理平台V3._0</RootNamespace>
+    <AssemblyName>视野分销业务管理平台V3.0</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\..\Appro\</OutputPath>
+    <DocumentationFile>视野分销业务管理平台V3.0.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>视野分销业务管理平台V3.0.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Home.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DatagridviewEx, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\DatagridviewEx.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetMagic2005">
+      <HintPath>.\DotNetMagic2005.DLL</HintPath>
+    </Reference>
+    <Reference Include="ExpTab">
+      <HintPath>.\ExpTab.dll</HintPath>
+    </Reference>
+    <Reference Include="MyCTRLlib, Version=13.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\MyCTRLlib.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.2.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="RicherTextBox">
+      <HintPath>.\RicherTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="SY, Version=3.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\SY.dll</HintPath>
+    </Reference>
+    <Reference Include="SyERP20, Version=13.420.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\SyERP20.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="售后服务管理\售后领料单分配new.Designer.vb">
+      <DependentUpon>售后领料单分配new.vb</DependentUpon>
+    </Compile>
+    <Compile Include="售后服务管理\售后领料单分配new.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="售后服务管理\售后领料单分配唯一码.Designer.vb">
+      <DependentUpon>售后领料单分配唯一码.vb</DependentUpon>
+    </Compile>
+    <Compile Include="售后服务管理\售后领料单分配唯一码.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="售后服务管理\维修单预览器.Designer.vb">
+      <DependentUpon>维修单预览器.vb</DependentUpon>
+    </Compile>
+    <Compile Include="售后服务管理\维修单预览器.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="售后服务管理\售后返厂配件分配.Designer.vb">
+      <DependentUpon>售后返厂配件分配.vb</DependentUpon>
+    </Compile>
+    <Compile Include="售后服务管理\售后返厂配件分配.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="售后服务管理\售后附件表.Designer.vb">
+      <DependentUpon>售后附件表.vb</DependentUpon>
+    </Compile>
+    <Compile Include="售后服务管理\售后附件表.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="售后作业指导书\售后服务附件上传.Designer.vb">
+      <DependentUpon>售后服务附件上传.vb</DependentUpon>
+    </Compile>
+    <Compile Include="售后作业指导书\售后服务附件上传.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="售后作业指导书\msgboxmm.Designer.vb">
+      <DependentUpon>msgboxmm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="售后作业指导书\msgboxmm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="售后作业指导书\售后服务判断结果.Designer.vb">
+      <DependentUpon>售后服务判断结果.vb</DependentUpon>
+    </Compile>
+    <Compile Include="售后作业指导书\售后服务判断结果.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="售后作业指导书\售后服务方案库.Designer.vb">
+      <DependentUpon>售后服务方案库.vb</DependentUpon>
+    </Compile>
+    <Compile Include="售后作业指导书\售后服务方案库.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="售后作业指导书\售后服务维修物料库.Designer.vb">
+      <DependentUpon>售后服务维修物料库.vb</DependentUpon>
+    </Compile>
+    <Compile Include="售后作业指导书\售后服务维修物料库.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="售后服务管理\客户故障描述.Designer.vb">
+      <DependentUpon>客户故障描述.vb</DependentUpon>
+    </Compile>
+    <Compile Include="售后服务管理\客户故障描述.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="售后服务管理\售后领料审核base.vb" />
+    <Compile Include="售后服务管理\售后领料审核.Designer.vb">
+      <DependentUpon>售后领料审核.vb</DependentUpon>
+    </Compile>
+    <Compile Include="售后服务管理\售后领料审核.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="售后作业指导书\售后服务维修问题库base.vb" />
+    <Compile Include="售后服务管理\售后领料.Designer.vb">
+      <DependentUpon>售后领料.vb</DependentUpon>
+    </Compile>
+    <Compile Include="售后服务管理\售后领料.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrm.Designer.vb">
+      <DependentUpon>MainFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrmGood.Designer.vb">
+      <DependentUpon>MainFrmGood.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainFrmGood.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="售后服务管理\售后领料单分配器.Designer.vb">
+      <DependentUpon>售后领料单分配器.vb</DependentUpon>
+    </Compile>
+    <Compile Include="售后服务管理\售后领料单分配器.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="售后服务管理\售后服务单作业完成时描述Base.vb" />
+    <Compile Include="售后服务管理\售后服务单作业管理Base.vb" />
+    <Compile Include="售后服务管理\售后服务单作业管理.Designer.vb">
+      <DependentUpon>售后服务单作业管理.vb</DependentUpon>
+    </Compile>
+    <Compile Include="售后服务管理\售后服务单作业管理.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="售后服务管理\售后服务单分配.Designer.vb">
+      <DependentUpon>售后服务单分配.vb</DependentUpon>
+    </Compile>
+    <Compile Include="售后服务管理\售后服务单分配.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="售后服务管理\售后服务单分配管理Base.vb" />
+    <Compile Include="售后服务管理\售后服务单.Designer.vb">
+      <DependentUpon>售后服务单.vb</DependentUpon>
+    </Compile>
+    <Compile Include="售后服务管理\售后服务单.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="售后服务管理\售后服务单Base.vb" />
+    <Compile Include="售后服务管理\售后服务单历史查询.Designer.vb">
+      <DependentUpon>售后服务单历史查询.vb</DependentUpon>
+    </Compile>
+    <Compile Include="售后服务管理\售后服务单历史查询.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="售后服务管理\售后服务单历史查询Base.vb" />
+    <Compile Include="售后服务管理\售后服务单作业接收时描述.Designer.vb">
+      <DependentUpon>售后服务单作业接收时描述.vb</DependentUpon>
+    </Compile>
+    <Compile Include="售后服务管理\售后服务单作业接收时描述.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="售后服务管理\售后服务单作业完成时描述.Designer.vb">
+      <DependentUpon>售后服务单作业完成时描述.vb</DependentUpon>
+    </Compile>
+    <Compile Include="售后服务管理\售后服务单作业完成时描述.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="售后作业指导书\售后服务维修问题库.Designer.vb">
+      <DependentUpon>售后服务维修问题库.vb</DependentUpon>
+    </Compile>
+    <Compile Include="售后作业指导书\售后服务维修问题库.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="客户拜访管理\GETMan.Designer.vb">
+      <DependentUpon>GETMan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="客户拜访管理\GETMan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="客户拜访管理\新建客户查询base.vb" />
+    <Compile Include="客户拜访管理\新建客户查询.Designer.vb">
+      <DependentUpon>新建客户查询.vb</DependentUpon>
+    </Compile>
+    <Compile Include="客户拜访管理\新建客户查询.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="客户拜访管理\业务拜访记录单.Designer.vb">
+      <DependentUpon>业务拜访记录单.vb</DependentUpon>
+    </Compile>
+    <Compile Include="客户拜访管理\业务拜访记录单.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="客户拜访管理\业务拜访记录单Base.vb" />
+    <Compile Include="客户拜访管理\业务拜访记录单历史查询.Designer.vb">
+      <DependentUpon>业务拜访记录单历史查询.vb</DependentUpon>
+    </Compile>
+    <Compile Include="客户拜访管理\业务拜访记录单历史查询.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="客户拜访管理\业务拜访记录单历史查询Base.vb" />
+    <Compile Include="客户拜访管理\客户回访管理.Designer.vb">
+      <DependentUpon>客户回访管理.vb</DependentUpon>
+    </Compile>
+    <Compile Include="客户拜访管理\客户回访管理.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="客户拜访管理\预警天数设置窗口.Designer.vb">
+      <DependentUpon>预警天数设置窗口.vb</DependentUpon>
+    </Compile>
+    <Compile Include="客户拜访管理\预警天数设置窗口.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="客户拜访管理\日工作提交单.Designer.vb">
+      <DependentUpon>日工作提交单.vb</DependentUpon>
+    </Compile>
+    <Compile Include="客户拜访管理\日工作提交单.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="客户拜访管理\日工作提交单Base.vb" />
+    <Compile Include="客户拜访管理\客户回访管理Base.vb" />
+    <Compile Include="系统管理\Bus_DataBus_13.10.18.vb" />
+    <Compile Include="系统管理\LoginBase.vb" />
+    <Compile Include="系统管理\loginfrm.Designer.vb">
+      <DependentUpon>loginfrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="系统管理\loginfrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="系统管理\SystemStart_13.12.5.vb" />
+    <Compile Include="系统管理\业务员关系管理.Designer.vb">
+      <DependentUpon>业务员关系管理.vb</DependentUpon>
+    </Compile>
+    <Compile Include="系统管理\业务员关系管理.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="系统管理\业务员关系管理Base.vb" />
+    <Compile Include="客户拜访管理\日工作提交单历史查询.Designer.vb">
+      <DependentUpon>日工作提交单历史查询.vb</DependentUpon>
+    </Compile>
+    <Compile Include="客户拜访管理\日工作提交单历史查询.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="客户拜访管理\日工作提交单历史查询Base.vb" />
+    <Compile Include="集团帐单管理\新增销售订单.Designer.vb">
+      <DependentUpon>新增销售订单.vb</DependentUpon>
+    </Compile>
+    <Compile Include="集团帐单管理\新增销售订单.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="集团帐单管理\新增销售订单base.vb" />
+    <Compile Include="集团帐单管理\销售业绩划分输入.Designer.vb">
+      <DependentUpon>销售业绩划分输入.vb</DependentUpon>
+    </Compile>
+    <Compile Include="集团帐单管理\销售业绩划分输入.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="集团帐单管理\销售业绩划分输入Base.vb" />
+    <Compile Include="集团帐单管理\本期收款查询.Designer.vb">
+      <DependentUpon>本期收款查询.vb</DependentUpon>
+    </Compile>
+    <Compile Include="集团帐单管理\本期收款查询.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="集团帐单管理\本期收款查询Base.vb" />
+    <Compile Include="集团帐单管理\销售运费输入Base.vb" />
+    <Compile Include="集团帐单管理\销售运费输入.Designer.vb">
+      <DependentUpon>销售运费输入.vb</DependentUpon>
+    </Compile>
+    <Compile Include="集团帐单管理\销售运费输入.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="集团帐单管理\业务员业绩调整.Designer.vb">
+      <DependentUpon>业务员业绩调整.vb</DependentUpon>
+    </Compile>
+    <Compile Include="集团帐单管理\业务员业绩调整.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="集团帐单管理\业务员业绩调整Base.vb" />
+    <Compile Include="集团帐单管理\客户对帐单.Designer.vb">
+      <DependentUpon>客户对帐单.vb</DependentUpon>
+    </Compile>
+    <Compile Include="集团帐单管理\客户对帐单.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="集团帐单管理\客户对帐单Base.vb" />
+    <Compile Include="集团帐单管理\本期销售查询.Designer.vb">
+      <DependentUpon>本期销售查询.vb</DependentUpon>
+    </Compile>
+    <Compile Include="集团帐单管理\本期销售查询.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="集团帐单管理\本期销售查询Base.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="售后服务管理\售后返厂配件分配.resx">
+      <DependentUpon>售后返厂配件分配.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="售后服务管理\售后附件表.resx">
+      <DependentUpon>售后附件表.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="售后作业指导书\msgboxmm.resx">
+      <DependentUpon>msgboxmm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="售后作业指导书\售后服务判断结果.resx">
+      <DependentUpon>售后服务判断结果.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="售后作业指导书\售后服务方案库.resx">
+      <DependentUpon>售后服务方案库.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="售后作业指导书\售后服务维修物料库.resx">
+      <DependentUpon>售后服务维修物料库.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="售后作业指导书\售后服务附件上传.resx">
+      <DependentUpon>售后服务附件上传.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="售后服务管理\售后领料单分配new.resx">
+      <DependentUpon>售后领料单分配new.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="售后服务管理\售后领料单分配唯一码.resx">
+      <DependentUpon>售后领料单分配唯一码.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="售后服务管理\客户故障描述.resx">
+      <DependentUpon>客户故障描述.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="售后服务管理\售后领料审核.resx">
+      <DependentUpon>售后领料审核.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="售后服务管理\售后领料.resx">
+      <DependentUpon>售后领料.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrm.resx">
+      <DependentUpon>MainFrm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrmGood.resx">
+      <DependentUpon>MainFrmGood.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="售后服务管理\售后服务单作业管理.resx">
+      <DependentUpon>售后服务单作业管理.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="售后服务管理\售后服务单分配.resx">
+      <DependentUpon>售后服务单分配.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="售后服务管理\售后服务单.resx">
+      <DependentUpon>售后服务单.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="售后服务管理\售后服务单历史查询.resx">
+      <DependentUpon>售后服务单历史查询.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="售后服务管理\售后服务单作业接收时描述.resx">
+      <DependentUpon>售后服务单作业接收时描述.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="售后服务管理\售后服务单作业完成时描述.resx">
+      <DependentUpon>售后服务单作业完成时描述.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="售后作业指导书\售后服务维修问题库.resx">
+      <DependentUpon>售后服务维修问题库.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="售后服务管理\售后领料单分配器.resx">
+      <DependentUpon>售后领料单分配器.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="售后服务管理\维修单预览器.resx">
+      <DependentUpon>维修单预览器.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="客户拜访管理\GETMan.resx">
+      <DependentUpon>GETMan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="客户拜访管理\业务拜访记录单.resx">
+      <DependentUpon>业务拜访记录单.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="客户拜访管理\业务拜访记录单历史查询.resx">
+      <DependentUpon>业务拜访记录单历史查询.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="客户拜访管理\客户回访管理.resx">
+      <DependentUpon>客户回访管理.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="客户拜访管理\新建客户查询.resx">
+      <DependentUpon>新建客户查询.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="客户拜访管理\预警天数设置窗口.resx">
+      <DependentUpon>预警天数设置窗口.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="客户拜访管理\日工作提交单.resx">
+      <DependentUpon>日工作提交单.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="系统管理\loginfrm.resx">
+      <DependentUpon>loginfrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="系统管理\业务员关系管理.resx">
+      <DependentUpon>业务员关系管理.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="客户拜访管理\日工作提交单历史查询.resx">
+      <DependentUpon>日工作提交单历史查询.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="集团帐单管理\新增销售订单.resx">
+      <DependentUpon>新增销售订单.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="集团帐单管理\销售业绩划分输入.resx">
+      <DependentUpon>销售业绩划分输入.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="集团帐单管理\本期收款查询.resx">
+      <DependentUpon>本期收款查询.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="集团帐单管理\销售运费输入.resx">
+      <DependentUpon>销售运费输入.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="集团帐单管理\业务员业绩调整.resx">
+      <DependentUpon>业务员业绩调整.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="集团帐单管理\客户对帐单.resx">
+      <DependentUpon>客户对帐单.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="集团帐单管理\本期销售查询.resx">
+      <DependentUpon>本期销售查询.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram3.cd" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="报价订单管理\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Home.ico" />
+    <Content Include="SY.dll" />
+    <Content Include="SyERP20.dll" />
+    <None Include="Resources\new.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
