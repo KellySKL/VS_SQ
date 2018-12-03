@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using makelanlan;
 using ScueFun;
+using System.Xml;
 
 namespace sqErp
 {
@@ -19,6 +20,7 @@ namespace sqErp
         private puku_user USER = new puku_user();
         private Button btn_rg;
         private Button btn_del;
+        private Button btn_refresh;
         private MTable tb_user = new MTable();
         public demo()
         {
@@ -29,11 +31,10 @@ namespace sqErp
 
         private void demo_Load(object sender, EventArgs e)
         {
-            // ISkin.Help();
             List<puku> m = MUser.Get用户("");
             //加载数据区域
             Bform._mTable.数据表名称 = "puku_webservers_list";
-            Bform._mTable.分页 = true;
+            // Bform._mTable. = true;
             Bform._mTable.每页数量 = 300;
             Bform._mTable.ShowList(m);
             Bform._MainPanel.Dock = DockStyle.Fill;
@@ -43,7 +44,7 @@ namespace sqErp
             p.Dock = DockStyle.Right;
             p.Width = 650;
 
-            tb_user.分页 = true;
+            // tb_user.分页 = true;
             tb_user.每页数量 = 200;
             tb_user.数据表名称 = "puku_webservers_list";
             tb_user.Dock = DockStyle.Right;
@@ -76,6 +77,10 @@ namespace sqErp
             Bform._LeftPanel.Dock = DockStyle.Left;
             Bform._LeftPanel.Parent = this;
             //添加按钮方式
+            //添加按钮方式
+            btn_refresh = Skincss.AddButon(Bform._LeftPanel.Controls[0], "刷新数据", "0/560", "210/30", "#255255255", 10, "", 1, -1, false, Skin.upYcolor);
+            btn_refresh.Click += btn_refresh_Click;
+
             btn_rg = Skincss.AddButon(Bform._LeftPanel.Controls[0], "注册", "0/600", "210/30", "#255255255", 10, "", 1, -1, false, Skin.upBColor);
             btn_rg.Click += Bt_Click;
 
@@ -83,14 +88,14 @@ namespace sqErp
             btn_del.Visible = false;
             btn_del.Click += _del_Click;
             Label lb1 = Skincss.AddLable(Bform._LeftPanel.Controls[0], "密码：", "0/80", "80/30", "#100100100", 10, "", 1, -1, true);
-            
+
             TextBox txtbox_pwd = Skincss.AddTxt(Bform._LeftPanel.Controls[0], "password", " ", "90/80", "120/30", "#100100100");
 
             Label lb2 = Skincss.AddLable(Bform._LeftPanel.Controls[0], "账号：", "0/40", "80/30", "#100100100", 10, "", 1, -1, true);
 
             TextBox txtbox_user = Skincss.AddTxt(Bform._LeftPanel.Controls[0], "user", " ", "90/40", "120/30", "#100100100");
 
-            Label lb3= Skincss.AddLable(Bform._LeftPanel.Controls[0], "姓名：", "0/0", "80/30", "#100100100", 10, "", 1, -1, true);
+            Label lb3 = Skincss.AddLable(Bform._LeftPanel.Controls[0], "姓名：", "0/0", "80/30", "#100100100", 10, "", 1, -1, true);
 
             TextBox txtbox_name = Skincss.AddTxt(Bform._LeftPanel.Controls[0], "truename", " ", "90/0", "120/30", "#100100100");
 
@@ -154,21 +159,27 @@ namespace sqErp
                 _Refresh();
             }
         }
+
+        private void btn_refresh_Click(object sender, EventArgs e)
+        {
+            _Refresh();
+        }
+
         private void _Refresh()
         {
             List<puku_user> list_user = USER.Select(" and ISSTOP <> '是'  ");
-            List<puku> list_puku = MUser.Get用户("");
-            for (int i = list_puku.Count - 1; i >= 0; i--)
-            {
-                for (int j = list_user.Count - 1; j >= 0; j--)
-                {
-                    if (list_puku[i].USERPU == list_user[j].USERPU)
-                    {
-                        list_puku.Remove(list_puku[i]);
-                    }
-                }
-            }
-          
+            List<puku> list_puku = MUser.Get用户("  and USERPU not in (select USERPU from puku_user where ISSTOP <> '是')  ");
+            //for (int i = 0; i < list_puku.Count; i++)
+            //{
+            //    for (int j = 0; j < list_user.Count; j++)
+            //    {
+            //        if (list_puku[i].USERPU == list_user[j].USERPU)
+            //        {
+            //            list_puku.Remove(list_puku[i]);
+            //        }
+            //    }
+            //}
+
             Bform._mTable.ShowList(list_puku);
             tb_user.ShowList(list_user);
         }
@@ -176,11 +187,41 @@ namespace sqErp
         {
             string user_mm = ScueFun.BitLock.GetLock_L(password);
             string str_idept = "";
+            string dept = "";
             foreach (Control ctrl in this.Controls)
             {
                 if (ctrl is CheckBox && ((CheckBox)ctrl).Checked)
                 {
-                    str_idept += ctrl.Text + ",";
+                    dept = ctrl.Text;
+                    if (ctrl.Text == "维修员")
+                    {
+                        str_idept += "SW0002,FJ0001,";
+                    }
+                    else if (ctrl.Text == "业务员")
+                    {
+                        str_idept += "SW0001,SW0002,FJ0001,FJ0002,FJ0003,FJ0004,";
+                    }
+                    else if (ctrl.Text == "销售内勤")
+                    {
+                        str_idept += "SW0001,SW0002,FJ0001,FJ0002,FJ0003,FJ0004,AD0003,";
+                    }
+                    else if (ctrl.Text == "业务经理")
+                    {
+                        str_idept += "AD0001,AD0002,AD0003,FJ0003";
+                    }
+                    else if (ctrl.Text == "维修经理")
+                    {
+                        str_idept += "AD0001,AD0002,AD0003,FJ0003";
+                    }
+                    else if (ctrl.Text == "总经理")
+                    {
+                        str_idept += "SW0001,SW0002,FJ0001,FJ0002,FJ0003,FJ0004,AD0001,AD0002,AD0003,";
+                    }
+                    else if (ctrl.Text == "后台")
+                    {
+                        str_idept += "SW0001,SW0002,FJ0001,FJ0002,FJ0003,FJ0004,AD0001,AD0002,AD0003,";
+                    }
+                    else { }
                     ((CheckBox)ctrl).Checked = false;
                 }
             }
@@ -199,27 +240,29 @@ namespace sqErp
             if (type.ToUpper().Trim() == "REGIST")
             {
                 List<puku> list_puku = MUser.Get用户(" and USERPU='" + user + "'  ");
-                    //PUKU.Select("and USERPU='" + user + "' and ISSTOP <> '是' ");
+                //PUKU.Select("and USERPU='" + user + "' and ISSTOP <> '是' ");
                 puku_user User = new puku_user();
                 User = ScueFun.ScueMerge.MergeFrom(User, list_puku[0]);
                 User.MM = user_mm;
-                User.DEPT = str_idept;
+                User.DEPT = dept;
+                User.允许管理物料BY仓库名称 = str_idept;
                 User.Insert();
                 Msg msg = new Msg(3, "注册成功！");
             }
             else if (type.ToUpper().Trim() == "MODIFY")
             {
                 List<puku_user> list_user = GetPUser.PUser(" and USERPU='" + user + "' ");
-                    //USER.Select("and USERPU='" + user + "'  and ISSTOP <> '是' ");
-                list_user[0].MM = user_mm;
-                list_user[0].DEPT = str_idept;
-                list_user[0].ScueUpdate(ScueMerge.GetProperties(list_user[0]), " and id =" + list_user[0].ID);
+                //USER.Select("and USERPU='" + user + "'  and ISSTOP <> '是' ");
+                puku_user UU = new puku_user();
+                UU.MM = user_mm;
+                UU.允许管理物料BY仓库名称 = str_idept;
+                UU.Updata(" and id =" + list_user[0].ID);
                 Msg msg = new Msg(3, "修改成功！");
             }
             else if (type.ToUpper().Trim() == "CANCLE")
             {
                 List<puku_user> list_user = GetPUser.PUser(" and USERPU='" + user + "' ");
-               
+
                 puku_user m_user = list_user[0];
                 m_user.Reset_puku_user();
                 m_user.ISSTOP = "是";

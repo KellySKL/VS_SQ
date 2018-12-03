@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\pro\</OutputPath>
+    <OutputPath>..\..\..\WMS\sqErp\pro\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -31,21 +31,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="makelanlanBLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="MakelanlanBLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\pro\makelanlanBLL.dll</HintPath>
+      <HintPath>..\..\..\WMS\sqErp\pro\MakelanlanBLL.dll</HintPath>
     </Reference>
     <Reference Include="MakelanlanFun, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\pro\MakelanlanFun.dll</HintPath>
+      <HintPath>..\..\..\WMS\sqErp\pro\MakelanlanFun.dll</HintPath>
     </Reference>
     <Reference Include="makelanlanSKin, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\pro\makelanlanSKin.dll</HintPath>
+      <HintPath>..\..\..\WMS\sqErp\pro\makelanlanSKin.dll</HintPath>
     </Reference>
     <Reference Include="ScueFun, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\pro\ScueFun.dll</HintPath>
+      <HintPath>..\..\..\WMS\sqErp\pro\ScueFun.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
